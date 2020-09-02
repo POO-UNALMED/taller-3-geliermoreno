@@ -2,7 +2,7 @@ package taller3.televisores;
 
 public class Control {
 	
-	//atributos
+	//attributes
 	private TV tv;
 	
 	//get and set
@@ -15,8 +15,8 @@ public class Control {
 	
 	// link
 	public void enlazar(TV tv) {
-		this.tv = tv;
-		this.tv.setControl(this);
+		tv.control = this;
+        this.tv = tv;
 	}
 	
 	//Methods

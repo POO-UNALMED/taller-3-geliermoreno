@@ -1,29 +1,32 @@
 package taller3.televisores;
 
 public class TV {
-	
-	//Atributos
+	// Attributes
 	private Marca marca;
+	private Control control;
 	private int canal = 1;
 	private int precio = 500;
 	private boolean estado;
 	private int volumen = 1;
-	private Control control;
+	
 	private static int numTV;
 	
-	//Constructor
-	public TV(Marca marca, boolean estado) {
+	// Constructors
+	public TV(Marca marca, boolean estado){
 		this.marca = marca;
 		this.estado = estado;
-		numTV++;
+		numTV ++;
 	}
 	
-	//Get's
+	// Getters
 	public Marca getMarca() {
-		return	marca;
+		return marca;
 	}
 	public Control getControl() {
 		return control;
+	}
+	public int getCanal() {
+		return canal;
 	}
 	public int getPrecio() {
 		return precio;
@@ -31,69 +34,63 @@ public class TV {
 	public int getVolumen() {
 		return volumen;
 	}
-	public int getCanal() {
-		return canal;
+	public boolean getEstado() {
+		return estado;
 	}
-	public int getNumTV() {
+	public static int getNumTV() {
 		return numTV;
 	}
-	
-	//Set's
+	// Setters
 	public void setMarca(Marca marca) {
 		this.marca = marca;
 	}
 	public void setControl(Control control) {
 		this.control = control;
 	}
+	public void setCanal(int canal) {
+		if(canal >= 1 && canal <= 120 && this.getEstado() == true) {
+			this.canal = canal;
+		}
+	}
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 	public void setVolumen(int volumen) {
-		this.volumen = volumen;
+		if(volumen >= 0 && volumen <= 7 && this.getEstado() == true) {
+			this.volumen = volumen;
+		}
 	}
-	public void setCanal(int canal) {
-		this.canal = canal;
-	}
-	public void	setNumTV(int num) {
+	public static void setNumTV(int num) {
 		numTV = num;
 	}
-	
-	//Methods turnON and TurnOff
+	// Methods
+	public static int numTv() {
+		return numTV;
+	}
 	public void turnOn() {
-		this.estado = true;
+		estado = true;
 	}
 	public void turnOff() {
-		this.estado = false;
+		estado = false;
 	}
-	public boolean getEstado() {
-		return estado;
-	}
-	
-	//Methods canalUp and canalDown
 	public void canalUp() {
-		if ((this.estado == true) && (this.canal >= 1 && this.canal <= 120)) {
-			this.canal++;	
+		if(canal >= 1 && canal <= 120 && this.getEstado() == true) {
+			canal += 1;
 		}
-		
 	}
 	public void canalDown() {
-		if ((this.estado == true) && (this.canal >= 1 && this.canal <= 120)) {
-			this.canal--;	
+		if(canal >= 1 && canal <= 120 && this.getEstado() == true) {
+			canal -= 1;
 		}
 	}
-		
-
 	public void volumenUp() {
-		if ((this.estado == true) && (this.volumen >= 1 && this.volumen <= 120)) {
-			this.volumen++;	
+		if(volumen >= 0 && volumen <= 6 && this.getEstado() == true) {
+			volumen += 1;
 		}
-		
 	}
 	public void volumenDown() {
-		if ((this.estado == true) && (this.volumen >= 1 && this.volumen <= 120)) {
-			this.volumen--;	
+		if(volumen >= 1 && volumen <= 7 && this.getEstado() == true) {
+			volumen -= 1;
 		}
 	}
-
-	
 }

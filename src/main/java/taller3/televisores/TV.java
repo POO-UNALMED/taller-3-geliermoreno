@@ -49,12 +49,12 @@ public class TV {
 		this.precio = precio;
 	}
 	public void setVolumen(int volumen) {
-		if ((this.estado == true) && (this.volumen >= 1 && this.volumen <= 120)) {
+		if ((estado == true) && (volumen >= 0 && volumen <= 7)) {
 			this.volumen = volumen;	
 		}
 	}
 	public void setCanal(int canal) {
-		if ((this.estado == true) && (this.canal >= 1 && this.canal <= 120)) {
+		if ((estado == true) && (canal >= 1 && canal <= 120)) {
 			this.canal = canal;	
 		}
 	}
@@ -75,26 +75,26 @@ public class TV {
 	
 	//Methods canalUp and canalDown
 	public void canalUp() {
-		if ((this.estado == true) && (this.canal >= 1 && this.canal <= 120)) {
+		if ((estado == true) && (canal >= 1 && canal <= 120)) {
 			this.canal ++;	
 		}
 		
 	}
 	public void canalDown() {
-		if ((this.estado == true) && (this.canal >= 1 && this.canal <= 120)) {
+		if ((estado == true) && (canal >= 1 && canal <= 120)) {
 			this.canal --;	
 		}
 	}
 		
 
 	public void volumenUp() {
-		if ((this.estado == true) && (this.volumen >= 1 && this.volumen <= 120)) {
+		if ((estado == true) && (volumen >= 0 && volumen <= 6)) {
 			this.volumen ++;	
 		}
 		
 	}
 	public void volumenDown() {
-		if ((this.estado == true) && (this.volumen >= 1 && this.volumen <= 120)) {
+		if ((estado == true) && (volumen >= 1 && volumen <= 7)) {
 			this.volumen --;	
 		}
 	}

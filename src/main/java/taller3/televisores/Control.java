@@ -6,17 +6,17 @@ public class Control {
 	private TV tv;
 	
 	//get and set
-	public TV getTV() {
-		return this.tv;
+	public TV getTv() {
+		return tv;
 	}
-	public void setTV(TV tv) {
+	public void setTv(TV tv) {
 		this.tv = tv;
 	}
 	
 	// link
 	public void enlazar(TV tv) {
-		tv.control = this;
-        this.tv = tv;
+		this.tv = tv;
+		this.tv.setControl(this);
 	}
 	
 	//Methods
@@ -32,8 +32,8 @@ public class Control {
 	public void canalDown() {
 		tv.canalDown();
 	}
-	public void setCanal(int ca) {
-		tv.setCanal(ca);
+	public void setCanal(int can) {
+		tv.setCanal(can);
 	}
 	public void volumenUp() {
 		tv.volumenUp();

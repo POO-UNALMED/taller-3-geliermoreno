@@ -6,18 +6,18 @@ public class Marca {
 	private String nombre;
 	
 	//Constructor
-	public Marca(String nombre) {
+	public Marca(String nombre){
 		this.nombre = nombre;
 	}
 	
 	//get's and set's
 	
-	public String getNombre() {
+	public String getNombre(){
 		return nombre;
 	}
 	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombre(String nom){
+		this.nombre = nom;
 	}
 	
 }
